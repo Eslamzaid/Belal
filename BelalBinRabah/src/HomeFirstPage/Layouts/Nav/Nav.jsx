@@ -1,6 +1,6 @@
 import React from "react";
 import Contact from "./Contact/Contact";
-import { Routes, Router, Route, Link } from "react-router-dom";
+import { Routes, Router, Route, Link, Navigate } from "react-router-dom";
 import Layouts from "./../Layouts";
 import "./Nav.css";
 const LazyAbout = React.lazy(() => import("./Aboutus/AboutUs"));
@@ -10,13 +10,25 @@ export default function About() {
     <nav className="navMain">
       <div className="navStructure">
         <div className="navLinks">
-          <Link to="/home">Home</Link>
-          <Link to="aboutus">معلومات عنا</Link>
-          <Link to="Contact">اتصل بنا</Link>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link to="aboutus">معلومات عنا</Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link to="Contact">اتصل بنا</Link>
+            </li>
+          </ul>
         </div>
         <div className="">
           <Routes>
-            <Route path="/home" element={<Layouts />}></Route>
+            <Route path="/" element={<Navigate to="Layouts" />}></Route>
             <Route
               path="aboutus"
               element={
@@ -25,7 +37,14 @@ export default function About() {
                 </React.Suspense>
               }
             />
-
+            <Route
+              path="*"
+              element={
+                <div>
+                  <h2>404 Page not found</h2>
+                </div>
+              }
+            ></Route>
             <Route path="Contact" element={<Contact />} />
           </Routes>
         </div>
