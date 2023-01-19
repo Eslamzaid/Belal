@@ -37,14 +37,6 @@ export default function About() {
                 </React.Suspense>
               }
             />
-            <Route
-              path="*"
-              element={
-                <div>
-                  <h2>404 Page not found</h2>
-                </div>
-              }
-            ></Route>
             <Route path="Contact" element={<Contact />} />
           </Routes>
         </div>
