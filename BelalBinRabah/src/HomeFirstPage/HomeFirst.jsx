@@ -1,9 +1,9 @@
 import React from 'react'
-import Comp1 from './components/Comp1'
+import Layouts from './Layouts/Layouts'
 import "./HomePage.css"
 
 export default function HomeFirst() {
   return (
-    <Comp1/>
+    <Layouts/>
   )
 }

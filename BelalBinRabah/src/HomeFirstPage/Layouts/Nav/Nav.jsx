@@ -1,7 +1,7 @@
 import React from "react";
 import Contact from "./Contact/Contact";
 import { Routes, Router, Route, Link } from "react-router-dom";
-import "./About.css";
+import "./Nav.css";
 const LazyAbout = React.lazy(() => import("./Aboutus/AboutUs"));
 
 export default function About() {
@@ -25,7 +25,9 @@ export default function About() {
             <Route path="Contact" element={<Contact />} />
           </Routes>
         </div>
-      </div>
+        <div className="ThemeLight">
+        </div>
+      </div> 
     </nav>
   );
 }
