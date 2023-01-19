@@ -4,6 +4,7 @@ import { Routes, Router, Route, Link, Navigate } from "react-router-dom";
 import Layouts from "./../Layouts";
 import "./Nav.css";
 const LazyAbout = React.lazy(() => import("./Aboutus/AboutUs"));
+const home = Layouts
 
 export default function About() {
   return (
@@ -28,7 +29,7 @@ export default function About() {
         </div>
         <div className="">
           <Routes>
-            <Route path="/" element={<Navigate to="Layouts" />}></Route>
+            <Route path="/" element={<Navigate to="home" />}></Route>
             <Route
               path="aboutus"
               element={

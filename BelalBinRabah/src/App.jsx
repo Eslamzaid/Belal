@@ -1,15 +1,16 @@
 import React, { createContext, useState } from "react";
+import * as ReactDOM from 'react-dom';
 import HomeFirst from "./HomeFirstPage/HomeFirst";
 import Loading from "./Functionalites/Loading/Loading";
-// import ThemeSwitcher from "./Functionalites/Theme/Theme";
 import "./App.css";
 
 export const ThemeContext = createContext(null);
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState('dark');
+  const [isDarkMode, setDarkMode] = React.useState(false);
   const toggleTheme = () => {
-    setTheme((curr) => (curr == "light") ? "dark":"light");
+    setTheme((curr) => (curr == 'light') ? "dark":"light");
   };
   const [isLoading, setIsLoading] = React.useState(true);
   React.useEffect(() => {
@@ -17,6 +18,9 @@ export default function App() {
       setIsLoading(false);
     }, 2000);
   });
+  const touched = () => {
+    setTheme(theme == 'light' ? 'dark': 'light')
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
