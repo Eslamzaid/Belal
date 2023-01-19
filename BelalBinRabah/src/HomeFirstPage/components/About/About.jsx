@@ -2,48 +2,30 @@ import React from "react";
 import Contact from "./Contact/Contact";
 import { Routes, Router, Route, Link } from "react-router-dom";
 import "./About.css";
-const LazyAbout = React.lazy(() => import("./About/AboutUs"));
+const LazyAbout = React.lazy(() => import("./Aboutus/AboutUs"));
 
 export default function About() {
   return (
-    <>
-      <div>
-        <h1>This is the home page</h1>
-        <Link to='/'>Click to view our page</Link>
-        <Link to="Contact">Wana Make a quick call📞🤙</Link>
+    <nav>
+      <div className="navStructure">
+        <div className="navLinks">
+          <Link to="/">معلومات عنا</Link>
+          <Link to="Contact">اتصل بنا</Link>
+        </div>
+        <div className="">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <React.Suspense fallback="hi">
+                  <LazyAbout />
+                </React.Suspense>
+              }
+            />
+            <Route path="Contact" element={<Contact />} />
+          </Routes>
+        </div>
       </div>
-      <div>
-        <Routes>
-          <Route
-            path='/'
-        </Routes>
-      </div>
-    </>
+    </nav>
   );
 }
-// import React from 'react'
-// const LazyAbout = React.lazy(() => import('./About/About'))
-// import {Routes, Router, Route, Link} from 'react-router-dom'
-// import "./Comp1.css"
-
-// export default function Comp1() {
-//   return (
-//     <>
-//     <div>
-//       <h1>This is the home page</h1>
-//       <Link to="/">Click to view our about page</Link>
-//       <Link to="Login">Click to view our contact page</Link>
-//     </div>
-//         <Routes>
-//           <Route
-//             path='/'
-//             element={
-//               <React.Suspense fallback="hi">
-//                 <LazyAbout/>
-//               </React.Suspense>
-//             }/>
-//           <Route path='Login' element={<Login/>}/>
-//         </Routes>
-//     </>
-//   )
-// }
