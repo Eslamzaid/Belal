@@ -6,7 +6,7 @@ const LazyAbout = React.lazy(() => import("./Aboutus/AboutUs"));
 
 export default function About() {
   return (
-    <nav>
+    <nav className="navMain">
       <div className="navStructure">
         <div className="navLinks">
           <Link to="/">معلومات عنا</Link>

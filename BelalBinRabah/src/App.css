@@ -1,0 +1,12 @@
+#light{
+    background-color: white;
+}
+#light .navMain{
+    background-color: rgb(255, 255, 255);
+}
+#dark{
+    background-color: #2C3448;
+}
+#dark {
+    background-color: green;
+}
