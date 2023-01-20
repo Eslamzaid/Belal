@@ -1,12 +1,22 @@
-#light{
+#light {
     background-color: white;
 }
-#light .navMain{
+
+#light .navMain {
     background-color: rgb(255, 255, 255);
 }
-#dark{
-    background-color: #2C3448;
+
+#dark {
+    background-color: #2c3448;
 }
+
 #dark {
     background-color: green;
+}
+
+.themeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.1em;
 }

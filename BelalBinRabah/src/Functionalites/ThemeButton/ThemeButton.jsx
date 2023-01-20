@@ -5,9 +5,8 @@ export default function ThemeButton(props) {
   return (
     <div>
         <div>
-            <button >hi</button>
+            <DarkModeSwitch onClick={props.touched}  size={70} checked={props.checkedd} moonColor={'black'}/>
         </div>
-        <DarkModeSwitch onClick={props.touched}  size={120} checked={props.checkedd} moonColor={'black'}/>
     </div>
   )
 }
