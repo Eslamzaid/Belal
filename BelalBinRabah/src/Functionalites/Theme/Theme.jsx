@@ -1,8 +1,6 @@
-import React from 'react'
-import './ThemeSwitcher.css'
+import React from "react";
+import "./ThemeSwitcher.css";
 
 export default function ThemeSwitcher() {
-  return (
-    <div>Theme</div>
-  )
+  return <div>Theme</div>;
 }
