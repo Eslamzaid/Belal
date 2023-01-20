@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 #light {
     background-color: white;
 }
@@ -15,8 +20,9 @@
 }
 
 .themeButton {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0.1em;
+    position: relative;
+    bottom: 4.4em;
+    left: 115.5rem;
+    width: fit-content;
+    /* border: 1px solid red; */
 }

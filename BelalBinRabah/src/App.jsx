@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import * as ReactDOM from "react-dom";
 import HomeFirst from "./HomeFirstPage/HomeFirst";
 import Loading from "./Functionalites/Loading/Loading";
 import ThemeButton from "./Functionalites/ThemeButton/ThemeButton";
@@ -25,13 +24,11 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div id={theme}>{isLoading ? <Loading /> : <HomeFirst />}</div>
+      <div id={theme}>
+        {isLoading ? <Loading /> : <HomeFirst />}
+      </div>
       <div className="themeButton">
-        <ThemeButton
-          touched={touched}
-          checkedd={theme == "light"}
-          moonColor="red"
-        />
+        <ThemeButton touched={touched} checkedd={theme == "light"} />
       </div>
     </ThemeContext.Provider>
   );

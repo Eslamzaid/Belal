@@ -4,7 +4,7 @@ import { Routes, Router, Route, Link, Navigate } from "react-router-dom";
 import Layouts from "./../Layouts";
 import "./Nav.css";
 const LazyAbout = React.lazy(() => import("./Aboutus/AboutUs"));
-const home = Layouts
+const home = Layouts;
 
 export default function About() {
   return (
