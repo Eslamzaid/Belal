@@ -2,13 +2,14 @@ import React, { createContext, useState } from "react";
 import * as ReactDOM from 'react-dom';
 import HomeFirst from "./HomeFirstPage/HomeFirst";
 import Loading from "./Functionalites/Loading/Loading";
+import ThemeButton from "./Functionalites/ThemeButton/ThemeButton";
 import "./App.css";
 
 export const ThemeContext = createContext(null);
 
 export default function App() {
-  const [theme, setTheme] = useState('dark');
-  const [isDarkMode, setDarkMode] = React.useState(false);
+  const [theme, setTheme] = useState('light');
+  // const [isDarkMode, setDarkMode] = React.useState('light');
   const toggleTheme = () => {
     setTheme((curr) => (curr == 'light') ? "dark":"light");
   };
@@ -27,6 +28,7 @@ export default function App() {
       <div id={theme}>
       {isLoading ? <Loading /> : <HomeFirst />}
       </div>
+      <ThemeButton/>
     </ThemeContext.Provider>
   );
 }
