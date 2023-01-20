@@ -27,7 +27,11 @@ export default function App() {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div id={theme}>{isLoading ? <Loading /> : <HomeFirst />}</div>
       <div className="themeButton">
-        <ThemeButton touched={touched} checkedd={theme == 'light'}  moonColor="red"/>
+        <ThemeButton
+          touched={touched}
+          checkedd={theme == "light"}
+          moonColor="red"
+        />
       </div>
     </ThemeContext.Provider>
   );
